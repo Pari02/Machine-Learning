@@ -40,7 +40,7 @@ def main():
         # calculate regression using pre-defined python function
         linear_regr = lm.LinearRegression()
 
-        # training model using the training sets
+        # training model 
         linear_regr.fit(Z, y)
         
         # Mean square error calculation by 10 Fold cross validation 

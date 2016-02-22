@@ -14,16 +14,13 @@ from sklearn import preprocessing as pp
 def load_data(file_name):
     
     # Load Single Feature data set
-    load_data = np.loadtxt(file_name, unpack=True)
+    load_data = np.genfromtxt(file_name)
     
-    # Check the scale of the dataset if True store values of x and y 
-    if(True):
-        pp.scale(load_data)
-        x = load_data[0]
-        y = load_data[1]
+    # getting column and row information of dataset
+    c = load_data.shape[1]
     
-    # reshaping x
-    x = x.reshape(x.size,1) 
+    x = load_data[:,xrange(0,c-1)]
+    y = load_data[:,c-1]
     
     return x, y
     
